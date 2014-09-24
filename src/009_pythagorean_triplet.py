@@ -15,9 +15,10 @@ def get_all_triplets(n):
                         triplets.append((a, b, c))
     return triplets
 
-num = 1000
-ptrips = get_all_triplets(num)
-for ptrip in ptrips:
-    #print ptrip
-    if ptrip[0] + ptrip[1] + ptrip[2] == num:
-        print ptrip
+if __name__ == '__main__':
+    num = 1000
+    ptrips = get_all_triplets(num)
+    for ptrip in ptrips:
+        #print ptrip
+        if ptrip[0] + ptrip[1] + ptrip[2] == num:
+            print ptrip

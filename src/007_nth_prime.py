@@ -19,4 +19,5 @@ def get_nth_prime(n):
             i += 1
     return i - 1
 
-print get_nth_prime(10001)
+if __name__ == '__main__':
+    print get_nth_prime(10001)

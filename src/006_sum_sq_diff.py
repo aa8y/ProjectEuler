@@ -10,4 +10,5 @@ def square_of_sums(n):
         total += i
     return total ** 2
 
-print square_of_sums(100) - sum_of_squares(100)
+if __name__ == '__main__':
+    print square_of_sums(100) - sum_of_squares(100)

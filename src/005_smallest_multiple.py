@@ -10,11 +10,12 @@ def get_largest_evenly_divisible(n):
         num *= i
     return num
 
-num = get_largest_evenly_divisible(20)
-for i in range (2, 21):
-    tnum = num
-    while is_evenly_divisible(tnum):
-        num = tnum
-        tnum /= i
+if __name__ == '__main__':
+    num = get_largest_evenly_divisible(20)
+    for i in range (2, 21):
+        tnum = num
+        while is_evenly_divisible(tnum):
+            num = tnum
+            tnum /= i
 
-print num
+    print num

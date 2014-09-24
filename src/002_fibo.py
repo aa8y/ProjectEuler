@@ -19,5 +19,6 @@ def get_even_total(nums):
       total += num
   return total
 
-f = gen_fibo(4000000)
-print get_even_total(f)
+if __name__ == '__main__':
+    f = gen_fibo(4000000)
+    print get_even_total(f)

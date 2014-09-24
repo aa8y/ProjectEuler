@@ -6,9 +6,11 @@ def is_prime(n):
             break
     return prime
 
-total = 0
-for i in xrange(2, 11):
-    if is_prime(i):
-        total += i
+if __name__ == '__main__':
+    total = 0
 
-print total
+    for i in xrange(2, 11):
+        if is_prime(i):
+            total += i
+
+    print total
