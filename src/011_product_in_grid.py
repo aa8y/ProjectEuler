@@ -16,51 +16,43 @@ def findGreatestProduct(grid):
             # West/Left
             if c - 4 >= 0:
                 prod = reduce(mul, grid[r][(c - 4):c])
-                if prod > maxProd:
-                    maxProd = prod
+                maxProd = max(prod, maxProd)
             # East/Right
             if c + 4 < len(grid[r]):
                 prod = reduce(mul, grid[r][c:(c + 4)])
-                if prod > maxProd:
-                    maxProd = prod
+                maxProd = max(prod, maxProd)
             # North/Up
             if r - 4 >= 0:
                 prod = reduce(mul, map(lambda x: x[c], grid[(r - 4):r]))
-                if prod > maxProd:
-                    maxProd = prod
+                maxProd = max(prod, maxProd)
             # South/Down
             if r + 4 < len(grid):
                 prod = reduce(mul, map(lambda x: x[c], grid[r:(r + 4)]))
-                if prod > maxProd:
-                    maxProd = prod
+                maxProd = max(prod, maxProd)
             # North-west
             if c - 4 >= 0 and r - 4 >= 0:
                 prod = 1
                 for i in range(0, 4):
                     prod *= grid[r - i][c - i]
-                if prod > maxProd:
-                    maxProd = prod
+                maxProd = max(prod, maxProd)
             # North-east
             if c + 4 < len(grid[r]) and r - 4 >= 0:
                 prod = 1
                 for i in range(0, 4):
                     prod *= grid[r - i][c + i]
-                if prod > maxProd:
-                    maxProd = prod
+                maxProd = max(prod, maxProd)
             # South-east
             if c + 4 < len(grid[r]) and r + 4 < len(grid):
                 prod = 1
                 for i in range(0, 4):
                     prod *= grid[r + i][c + i]
-                if prod > maxProd:
-                    maxProd = prod
+                maxProd = max(prod, maxProd)
             # South-west
             if c - 4 >= 0 and r + 4 < len(grid):
                 prod = 1
                 for i in range(0, 4):
                     prod *= grid[r + i][c - i]
-                if prod > maxProd:
-                    maxProd = prod
+                maxProd = max(prod, maxProd)
 
     return maxProd
 
