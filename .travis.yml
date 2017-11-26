@@ -2,11 +2,12 @@ sudo: required
 services:
   - docker
 before_script:
-  - docker login -u aa8y -p "$DOCKER_PASSWORD"
+  - docker pull aa8y/test-env:project-euler
   - docker build -t aa8y/test-env:project-euler .
 script:
   - docker run --rm -it aa8y/test-env:project-euler sbt test
 after_success:
+  - docker login -u aa8y -p "$DOCKER_PASSWORD"
   - docker push aa8y/test-env:project-euler
 ignore:
   - "*.md"
