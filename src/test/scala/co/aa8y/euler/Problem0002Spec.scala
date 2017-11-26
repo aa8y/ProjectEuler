@@ -11,9 +11,15 @@ class Problem0002Spec extends FunSpec {
 
         assert(computed === expected)
       }
-      it("100 should be 233168.") {
+      it("100 should be 44.") {
         val expected = 44
         val computed = Problem0002.solution(100)
+
+        assert(computed === expected)
+      }
+      it("4,000,000 should be 4,613,732.") {
+        val expected = 4613732
+        val computed = Problem0002.solution(4000000)
 
         assert(computed === expected)
       }

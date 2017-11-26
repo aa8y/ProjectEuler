@@ -12,23 +12,20 @@ package co.aa8y.euler
  * find the sum of the even-valued terms.
  */
 object Problem0002 {
-  def solution(max: Int = 4000000): Long = {
-    var fibo = Seq(1, 2)
-
-    def getNext(prev: Int, curr: Int): Int = fibo(prev) + fibo(curr)
+  def solution(max: Int = 4000000): Int = {
+    var sum = 0
     var prev = 0
     var curr = 1
-    var next = getNext(prev, curr)
+    var next = prev + curr
 
-    while(isValid(next)(max)) {
-      fibo = fibo :+ next
-      prev = prev + 1
-      curr = curr + 1
-      next = getNext(prev, curr)
+    while (next <= max) {
+      if (next % 2 == 0) sum += next
+
+      next = prev + curr
+      prev = curr
+      curr = next
     }
 
-    fibo.filter(_ % 2 == 0).sum
+    sum
   }
-
-  def isValid(n: Int)(max: Int): Boolean = n <= max
 }
